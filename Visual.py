@@ -1,24 +1,25 @@
-import matplotlib.pyplot as plt #ONE OF THE REQUIRED LIBARIES FOR THE VISUALIZATION COMPONENT
+import matplotlib.pyplot as plt #one of the required libraries for generating visualizations in the visual component
 
-def generate_attendance_chart(students): #Function to generate a bar chart for student attendance.
-     #It takes a list of student dictionaries as input, where each dictionary contains the student's name and attendance percentage.
-
-   
-    names = [s['name'] for s in students] #goes through the list of students and extracts their names to create a list of names for the x-axis of the bar chart.
-
-    attendance = [s['attendance'] for s in students] #similarly, it extracts the attendance percentages for each student to create a list of attendance values for the y-axis of the bar chart.
-
+def generate_attendance_chart(student_dict, threshold):
+    #Generates bar chart for current class attendance.
+    if not student_dict: #If the student_dict is empty, it means there are no student records to display, 
+        return
+    
+    names = list(student_dict.keys())
+    # The following line uses a list comprehension to extract the attendance values for each student from the student_dict. It iterates 
+    values = [data['attendance'] for data in student_dict.values()]
+     # through the values of the student_dict (which are the individual student records) and retrieves the 'attendance' value for each student, creating a list of attendance percentages that corresponds to the list of student names.  
     plt.figure(figsize=(10, 6))
+#setting the size of the chart
+    plt.bar(names, values, color='#005eb8') #value of the bars in the chart, with a specific color for visual appeal. 
 
-    plt.bar(names, attendance, color='skyblue') #sets the color of the bars to sky blue for better visualization.
-
-    plt.axhline(y=80, color='r', linestyle='--', label='At-Risk Threshold') #adds a horizontal dashed red line at the 80% attendance threshold to visually indicate which students are at risk based on their attendance. The label 'At-Risk Threshold' is added for the legend.
-
+    plt.axhline(y=threshold, color='r', linestyle='--', label=f'Threshold ({threshold}%)')
+# This line adds a horizontal dashed red line to the bar chart at the y-value corresponding to the attendance threshold. 
     plt.xlabel('Student Name')
 
-    plt.ylabel('Attendance (%)')
+    plt.ylabel('Attendance %')
 
-    plt.title('Class Attendance Overview')
+    plt.title('Attendance Overview')
 
     plt.legend()
 
