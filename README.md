@@ -67,5 +67,16 @@ Password : york2026
 Note: you can adjust the thresholds of the program, and when viewing students, any student marked in red is “at-risk”. 
 
 
+Reference List: 
+
+Robbins, S. (2022). A beginner’s Guide to JSON, the Data Format for the Internet. [online] Stack Overflow Blog. Available at: https://stackoverflow.blog/2022/06/02/a-beginners-guide-to-json-the-data-format-for-the-internet/.
+
+Tutorials Point (n.d.). Python - Tkinter Scrollbar - Tutorialspoint. [online] www.tutorialspoint.com. Available at: https://www.tutorialspoint.com/python/tk_scrollbar.htm.
+
+W3schools (n.d.). Python JSON. [online] www.w3schools.com. Available at: https://www.w3schools.com/python/python_json.asp.w3Schools (n.d.).
+
+Python String isalpha() Method. [online] www.w3schools.com. Available at: https://www.w3schools.com/python/ref_string_isalpha.asp.
+
+
 
 
